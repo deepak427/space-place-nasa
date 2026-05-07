@@ -6,7 +6,7 @@ import { playVoice, stopVoice } from '../utils/voice'
 import { useLanguage } from '../context/LanguageContext'
 
 export default function LaunchPage({ onBack }) {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [journeyActive, setJourneyActive] = useState(false)
   const [currentStep, setCurrentStep] = useState(-1)
   const [spotlight, setSpotlight] = useState({ x: 0, y: 0, w: 0, h: 0, active: false, pos: 'right' })

@@ -4,27 +4,27 @@ import { useLanguage } from '../context/LanguageContext'
 
 const artSubmissions = [
   {
-    src: '/art/mariner-4_josefa-10.jpg',
+    src: '/art/mariner-4_josefa-10.webp',
     alt: 'Drawing of Mariner 4 by Josefa, age 10',
     credit: 'Josefa, 10',
   },
   {
-    src: '/art/mariner-4_sofia-14.jpg',
+    src: '/art/mariner-4_sofia-14.webp',
     alt: 'Mariner 4 artwork by Sofia, age 14',
     credit: 'Sofia, 14',
   },
   {
-    src: '/art/mariner-4_roberto-10.jpg',
+    src: '/art/mariner-4_roberto-10.webp',
     alt: 'Mariner 4 artwork by Roberto, age 10',
     credit: 'Roberto, 10',
   },
   {
-    src: '/art/mariner-4_ryan-5.jpg',
+    src: '/art/mariner-4_ryan-5.webp',
     alt: 'Mariner 4 artwork by Ryan, age 5',
     credit: 'Ryan, 5',
   },
   {
-    src: '/art/mariner-4_mirial-4.jpg',
+    src: '/art/mariner-4_mirial-4.webp',
     alt: 'Mariner 4 artwork by Mirial, age 4',
     credit: 'Mirial, 4',
   },
