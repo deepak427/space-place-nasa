@@ -27,7 +27,14 @@ const stepTexts = [
   "Here's a spooky question: Is there a 'dark side' of the Moon? Well... not really! The Moon spins around exactly once for every trip it takes around Earth. That means we always see the exact same side from our backyard! The side we don't see gets just as much sunlight, so scientists prefer to call it the 'far side'.",
   "So, how did this giant rock get up there? Billions of years ago, a massive space object the size of Mars crashed right into Earth! BOOM! That giant splash sent chunks of rock flying into space. Slowly, gravity pulled all those pieces together to build the Moon we see today!",
   "How do we study it? Well, thousands of years ago, people just drew pictures. But today, we use super powerful telescopes and incredible spacecraft! The Moon is actually the only other world humans have ever visited. In 1969, astronauts Neil Armstrong and Buzz Aldrin walked right on that dusty surface!",
-  "We know the Moon is covered in craters from space rocks crashing into it over billions of years. Those big dark spots? They're ancient lava that cooled down long ago! There are still so many mysteries left. Maybe YOU will be one of the next explorers to visit the Moon!"
+  "We know the Moon is covered in craters from space rocks crashing into it over billions of years. Those big dark spots? They're ancient lava that cooled down long ago! There are still so many mysteries left. Maybe YOU will be one of the next explorers to visit the Moon!",
+  "Have you ever looked at the night sky and noticed the Moon seems to change shape? Some nights it's a tiny sliver, and others it's a big, bright circle. These different shapes are called phases of the Moon!",
+  "But here's a secret: the Moon doesn't actually make its own light. Without the Sun, the Moon would be completely dark! What we call 'moonlight' is actually sunlight reflecting off the Moon's surface, like a giant space mirror.",
+  "Sunlight always lights up exactly half of the Moon—the side facing the Sun. The other side is always in shadow. It's just like how Earth has day and night!",
+  "On Earth, our view of that lit-up half changes every night. It all depends on where the Moon is in its orbit around our planet.",
+  "Try spinning the Moon yourself! Watch how the light moves across the surface. When we see the entire lit side, it's a Full Moon. When we see nothing, it's a New Moon!",
+  "There are eight main phases in total: New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Third Quarter, and Waning Crescent. 'Waxing' means it's getting bigger, and 'Waning' means it's getting smaller.",
+  "The Moon takes about 27.3 days to go around Earth, but the full cycle of phases takes about 29.5 days. That's almost exactly one month! The Moon just keeps on spinning, night after night."
 ];
 
 async function generateAudio(text) {
