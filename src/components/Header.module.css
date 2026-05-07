@@ -222,21 +222,26 @@
   border-color: var(--amber-dark);
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1050px) {
   .header {
     width: calc(100% - 2rem);
-    margin: 1rem auto;
-    padding: 1.5rem;
-    flex-direction: column;
+    margin: 1.5rem auto;
     gap: 2rem;
-    transform: rotate(0.5deg);
+  }
+}
+
+@media (max-width: 850px) {
+  .header {
+    flex-direction: column;
+    padding: 1.5rem;
+    align-items: center;
+    text-align: center;
   }
 
   .brand {
     flex-direction: column;
-    text-align: center;
-    gap: 0.75rem;
     width: 100%;
+    align-items: center;
   }
 
   .titleBlock {
@@ -244,23 +249,57 @@
   }
 
   .spacePlace {
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
   }
 
   .controls {
-    flex-direction: column;
     width: 100%;
-    gap: 1.5rem;
+    align-items: center;
   }
 
   .spanishLink {
-    width: 80%;
-    text-align: center;
-    transform: rotate(1deg);
+    width: auto;
+    min-width: 200px;
+    margin-bottom: 0.5rem;
   }
 
   .searchForm {
     width: 100%;
-    transform: rotate(-0.5deg);
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1.25rem 1rem;
+    margin: 1rem auto;
+    border-width: 3px;
+  }
+
+  .nasaScience {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+  }
+
+  .spacePlace {
+    font-size: 2.2rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .spanishLink {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .searchInput {
+    font-size: 1rem;
+  }
+
+  .searchBtn {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
   }
 }

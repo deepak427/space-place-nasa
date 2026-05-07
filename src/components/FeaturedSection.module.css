@@ -404,29 +404,65 @@
   gap: 0.5rem;
 }
 
+@media (max-width: 1100px) {
+  .section {
+    gap: 2.5rem;
+  }
+}
+
 @media (max-width: 1000px) {
-  .moonGrid,
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .moonGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .moonCard:nth-child(1) {
+    grid-column: span 2;
+    min-height: auto;
+  }
+
   .sidebar {
     grid-column: span 12;
+    flex-direction: row;
+    gap: 2rem;
   }
 
-  .moonCard:nth-child(1),
-  .moonCard:nth-child(2),
-  .moonCard:nth-child(3) {
-    flex: 1 1 100%;
-    transform: rotate(0.5deg) translateY(0);
-  }
-
-  .moonCard:nth-child(even) {
-    transform: rotate(-0.5deg);
+  .skywatchCard, .launchCard {
+    flex: 1;
   }
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding: 2rem 0;
+    gap: 2.5rem;
+  }
+
+  .moonGrid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .moonCard:nth-child(1) {
+    grid-column: span 1;
+  }
+
+  .sidebar {
+    flex-direction: column;
+  }
+
   .dsnCard {
     flex-direction: column;
     padding: 2rem 1rem;
     gap: 2rem;
+    border-radius: 30px;
   }
 
   .dsnControlsLeft,
@@ -450,9 +486,29 @@
 }
 
 @media (max-width: 480px) {
+  .moonTitle {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .skywatchTitle, .launchTitle {
+    font-size: 1.4rem;
+  }
+
+  .sidebarIcon {
+    width: 60px;
+    height: 60px;
+  }
+
   .dsnScreen {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .dsnPlay {
+    font-size: 1.4rem;
+  }
+
+  .dsnDesc {
+    font-size: 1rem;
   }
 }

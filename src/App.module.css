@@ -30,10 +30,16 @@
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1rem, 5vw, 2.5rem);
   display: flex;
   flex-direction: column;
   gap: var(--section-gap);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    --section-gap: clamp(2rem, 8vh, 4rem);
+  }
 }
 
 .navWrapper {
@@ -41,4 +47,12 @@
   /* Cluster with header */
   z-index: 10;
   transform: rotate(-1.2deg);
+  padding: 0 1rem;
+}
+
+@media (max-width: 850px) {
+  .navWrapper {
+    margin-top: 0;
+    transform: none;
+  }
 }

@@ -103,7 +103,7 @@ export default function MoonDistancePage({ onBack }) {
     if (journeyActive && currentStep >= 0 && currentStep < stepTexts.length) {
       const el = stepRefs[currentStep].current
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
         el.focus()
         setTimeout(updateSpotlight, 100)
       }

@@ -825,41 +825,58 @@
 .journeyControls {
   position: fixed;
   bottom: clamp(1rem, 5vh, 3rem);
+  left: 0;
+  right: 0;
   z-index: 2000;
   pointer-events: none;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 0 clamp(1rem, 5vw, 2rem);
-  max-width: 600px;
-  transition: transform 0.5s var(--ease-pop), left 0.5s var(--ease-pop), right 0.5s var(--ease-pop), bottom 0.5s var(--ease-pop);
+  gap: 1.25rem;
+  padding: 0 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.5s var(--ease-pop);
 }
 
 .journeyControlsActive {
-  bottom: clamp(2rem, 15vh, 8rem);
+  bottom: clamp(1.5rem, 12vh, 6rem);
 }
 
 .journeyControlsRight {
-  right: 0;
-  left: auto;
   align-items: flex-end;
 }
 
 .journeyControlsLeft {
-  left: 0;
-  right: auto;
   align-items: flex-start;
 }
 
 .journeyControlsLeft .cosmicNarrator {
   flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 
 .journeyControlsCenter {
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%);
   align-items: center;
+}
+
+@media (min-width: 600px) {
+  .journeyControls {
+    max-width: 600px;
+    padding: 0 2rem;
+  }
+  
+  .journeyControlsLeft {
+    right: auto;
+  }
+  
+  .journeyControlsRight {
+    left: auto;
+  }
+  
+  .journeyControlsCenter {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .journeyControls > * {
@@ -867,6 +884,10 @@
 }
 
 @media (max-width: 480px) {
+  .speechBubble {
+    padding: 1.25rem 1rem;
+    gap: 0.75rem;
+  }
   .speechText {
     font-size: 1rem;
   }
