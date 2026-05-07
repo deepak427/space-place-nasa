@@ -116,12 +116,12 @@ export default function MoonPage({ onBack }) {
       }
 
       setIsSpeaking(true)
-      playVoice(stepTexts[currentStep], () => {
+      playVoice(stepTexts[currentStep], language, () => {
         setIsSpeaking(false)
         // Auto-advance removed for P1 accessibility compliance
       })
     }
-  }, [journeyActive, currentStep, updateSpotlight])
+  }, [journeyActive, currentStep, updateSpotlight, language])
 
   // Flying Moon Effect
   useEffect(() => {

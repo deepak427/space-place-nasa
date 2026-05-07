@@ -109,11 +109,11 @@ export default function MoonDistancePage({ onBack }) {
       }
 
       setIsSpeaking(true)
-      playVoice(stepTexts[currentStep], () => {
+      playVoice(stepTexts[currentStep], language, () => {
         setIsSpeaking(false)
       })
     }
-  }, [journeyActive, currentStep, updateSpotlight])
+  }, [journeyActive, currentStep, updateSpotlight, language])
 
   useEffect(() => {
     window.addEventListener('resize', updateSpotlight)

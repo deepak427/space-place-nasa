@@ -8,11 +8,11 @@ const getHash = async (text) => {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 };
 
-export const playVoice = async (text, onEnd) => {
+export const playVoice = async (text, language, onEnd) => {
   stopVoice(); // Stop any currently playing audio
 
   try {
-    const hash = await getHash(text);
+    const hash = await getHash(`${language}:${text}`);
     const cache = await caches.open('cosmic-voice-cache');
     
     // 1. Check browser persistent cache
@@ -95,16 +95,26 @@ export const playVoice = async (text, onEnd) => {
   // Fallback to Web Speech API
   const utterance = new SpeechSynthesisUtterance(text);
   const voices = window.speechSynthesis.getVoices();
-  const preferredVoice = voices.find(v => v.name.includes('Female') || v.name.includes('Child') || v.name.includes('Samantha'));
+  const currentLang = document.documentElement.lang || 'en';
+  
+  // Try to find a natural sounding voice for the current language
+  const preferredVoice = voices.find(v => 
+    v.lang.startsWith(currentLang) && 
+    (v.name.includes('Natural') || v.name.includes('Aria') || v.name.includes('Google') || v.name.includes('Samantha'))
+  ) || voices.find(v => v.lang.startsWith(currentLang));
+
   if (preferredVoice) utterance.voice = preferredVoice;
-  utterance.rate = 0.9;
-  utterance.pitch = 1.2;
+  utterance.rate = 0.95;
+  utterance.pitch = 1.0;
   
   utterance.onend = () => {
     if (onEnd) onEnd();
   };
   
-  window.speechSynthesis.speak(utterance);
+  // Small delay to ensure previous speech is fully cleared
+  setTimeout(() => {
+    window.speechSynthesis.speak(utterance);
+  }, 50);
 };
 
 export const stopVoice = () => {
