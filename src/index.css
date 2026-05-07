@@ -90,7 +90,7 @@ body {
   background-color: var(--paper-bg);
   background-image: 
     radial-gradient(circle at 50% 50%, var(--paper-mid) 0%, var(--paper-bg) 100%),
-    url('./assets/cosmic-doodles.png');
+    url('./assets/cosmic-doodles.webp');
   background-size: cover, 1200px;
   background-blend-mode: overlay;
   color: var(--text-main);

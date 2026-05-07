@@ -4,7 +4,7 @@ export const topicData = {
       title: "Earth",
       subtitle: "Our Beautiful Home",
       description: "Since we live here, you might think we know everything about Earth. But there is so much left to discover about our amazing home planet!",
-      heroImage: "/menu_earth_hero.png",
+      heroImage: "/menu_earth_hero.webp",
       color: "var(--cosmic-earth)",
       sections: [
         {
@@ -88,7 +88,7 @@ export const topicData = {
       title: "The Sun",
       subtitle: "Our Closest Star",
       description: "The Sun is an ordinary star, but it's very special to us! It provides the light and heat that makes life on Earth possible.",
-      heroImage: "/menu_sun_hero.png",
+      heroImage: "/menu_sun_hero.webp",
       color: "var(--cosmic-sun)",
       sections: [
         {
@@ -160,7 +160,7 @@ export const topicData = {
       title: "Solar System",
       subtitle: "Our Cosmic Neighborhood",
       description: "From the tiny Mercury to the giant Jupiter, our solar system is full of amazing worlds to explore!",
-      heroImage: "/menu_solar_system_hero.png",
+      heroImage: "/menu_solar_system_hero.webp",
       color: "var(--cosmic-system)",
       sections: [
         {
@@ -232,7 +232,7 @@ export const topicData = {
       title: "Universe",
       subtitle: "Beyond the Stars",
       description: "The universe is everything we can touch, feel, sense, measure or detect. It includes living things, planets, stars, galaxies, dust clouds, light, and even time!",
-      heroImage: "/menu_universe_hero.png",
+      heroImage: "/menu_universe_hero.webp",
       color: "var(--cosmic-universe)",
       sections: [
         {
@@ -292,7 +292,7 @@ export const topicData = {
       title: "Science & Tech",
       subtitle: "Tools for Discovery",
       description: "How do we learn about space? With amazing robots, powerful rockets, and clever science!",
-      heroImage: "/menu_science_tech_hero.png",
+      heroImage: "/menu_science_tech_hero.webp",
       color: "var(--cosmic-science)",
       sections: [
         {
@@ -335,7 +335,7 @@ export const topicData = {
       title: "Educators",
       subtitle: "Inspiring Future Explorers",
       description: "Resources for parents and teachers to bring the wonder of NASA into the classroom or home.",
-      heroImage: "/menu_educators_hero.png",
+      heroImage: "/menu_educators_hero.webp",
       color: "var(--cosmic-educator)",
       sections: [
         {
@@ -380,7 +380,7 @@ export const topicData = {
       title: "Tierra",
       subtitle: "Nuestro Hermoso Hogar",
       description: "Como vivimos aquí, podrías pensar que lo sabemos todo sobre la Tierra. ¡Pero queda mucho por descubrir sobre nuestro increíble planeta!",
-      heroImage: "/menu_earth_hero.png",
+      heroImage: "/menu_earth_hero.webp",
       color: "var(--cosmic-earth)",
       sections: [
         {
@@ -464,7 +464,7 @@ export const topicData = {
       title: "El Sol",
       subtitle: "Nuestra Estrella más Cercana",
       description: "El Sol es una estrella ordinaria, ¡pero es muy especial para nosotros! Proporciona la luz y el calor que hace posible la vida en la Tierra.",
-      heroImage: "/menu_sun_hero.png",
+      heroImage: "/menu_sun_hero.webp",
       color: "var(--cosmic-sun)",
       sections: [
         {
@@ -536,7 +536,7 @@ export const topicData = {
       title: "Sistema Solar",
       subtitle: "Nuestro Vecindario Cósmico",
       description: "¡Desde el diminuto Mercurio hasta el gigante Júpiter, nuestro sistema solar está lleno de mundos increíbles para explorar!",
-      heroImage: "/menu_solar_system_hero.png",
+      heroImage: "/menu_solar_system_hero.webp",
       color: "var(--cosmic-system)",
       sections: [
         {
@@ -608,7 +608,7 @@ export const topicData = {
       title: "Universo",
       subtitle: "Más allá de las Estrellas",
       description: "El universo es todo lo que podemos tocar, sentir, percibir, medir o detectar. ¡Incluye seres vivos, planetas, estrellas, galaxias, nubes de polvo, luz e incluso el tiempo!",
-      heroImage: "/menu_universe_hero.png",
+      heroImage: "/menu_universe_hero.webp",
       color: "var(--cosmic-universe)",
       sections: [
         {
@@ -668,7 +668,7 @@ export const topicData = {
       title: "Ciencia y Tecnología",
       subtitle: "Herramientas para el Descubrimiento",
       description: "¿Cómo aprendemos sobre el espacio? ¡Con robots increíbles, cohetes potentes y ciencia inteligente!",
-      heroImage: "/menu_science_tech_hero.png",
+      heroImage: "/menu_science_tech_hero.webp",
       color: "var(--cosmic-science)",
       sections: [
         {
@@ -711,7 +711,7 @@ export const topicData = {
       title: "Educadores",
       subtitle: "Inspirando a los Futuros Exploradores",
       description: "Recursos para padres y maestros para llevar la maravilla de la NASA al aula o al hogar.",
-      heroImage: "/menu_educators_hero.png",
+      heroImage: "/menu_educators_hero.webp",
       color: "var(--cosmic-educator)",
       sections: [
         {

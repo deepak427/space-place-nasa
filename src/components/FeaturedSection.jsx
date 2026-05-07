@@ -1,8 +1,8 @@
 import styles from './FeaturedSection.module.css'
 
-import iconTelescope from '../assets/icon-telescope.png'
-import iconRocket from '../assets/icon-rocket.png'
-import iconSatellite from '../assets/icon-satellite.png'
+import iconTelescope from '../assets/icon-telescope.webp'
+import iconRocket from '../assets/icon-rocket.webp'
+import iconSatellite from '../assets/icon-satellite.webp'
 
 import { useLanguage } from '../context/LanguageContext'
 
@@ -13,19 +13,19 @@ export default function FeaturedSection({ onMoonClick, onPhasesClick, onDistance
     {
       title: t('allAboutMoon'),
       key: 'allAboutMoon',
-      img: '/moon_cartoon.png',
+      img: '/moon_cartoon.webp',
       href: `https://spaceplace.nasa.gov/all-about-the-moon/${language}/`,
     },
     {
       title: t('moonPhases'),
       key: 'moonPhases',
-      img: '/moon_phases_simple.png',
+      img: '/moon_phases_simple.webp',
       href: `https://spaceplace.nasa.gov/moon-phases/${language}/`,
     },
     {
       title: t('moonDistance'),
       key: 'moonDistance',
-      img: '/earth_moon.png',
+      img: '/earth_moon.webp',
       href: `https://spaceplace.nasa.gov/moon-distance/${language}/`,
     },
   ]

@@ -316,19 +316,19 @@ export default function MoonPhasesPage({ onBack }) {
  
       <div className={styles.factsGrid}>
         <div ref={reflectionRef} {...getStepAttrs(1)} className={`${styles.factCard} ${styles.rotate1}`}>
-          <img src="/moon_reflection.png" alt="Friendly Sun reflecting light off the Moon mirror" className={styles.cardImage} loading="lazy" />
+          <img src="/moon_reflection.webp" alt="Friendly Sun reflecting light off the Moon mirror" className={styles.cardImage} loading="lazy" />
           <h3>{t('phasesMirrorTitle')}</h3>
           <p>{t('phasesMirrorDesc')}</p>
         </div>
  
         <div ref={halfLitRef} {...getStepAttrs(2)} className={`${styles.factCard} ${styles.rotate2}`}>
-          <img src="/moon_half_lit.png" alt="Moon with one side lit and one side dark" className={styles.cardImage} loading="lazy" />
+          <img src="/moon_half_lit.webp" alt="Moon with one side lit and one side dark" className={styles.cardImage} loading="lazy" />
           <h3>{t('phasesHalfTitle')}</h3>
           <p>{t('phasesHalfDesc')}</p>
         </div>
  
         <div ref={orbitViewRef} {...getStepAttrs(3)} className={`${styles.factCard} ${styles.rotateNegative1}`}>
-          <img src="/moon_phases_cycle.png" alt="Moon orbiting Earth showing different views" className={styles.cardImage} loading="lazy" />
+          <img src="/moon_phases_cycle.webp" alt="Moon orbiting Earth showing different views" className={styles.cardImage} loading="lazy" />
           <h3>{t('phasesViewTitle')}</h3>
           <p>{t('phasesViewDesc')}</p>
         </div>
@@ -395,7 +395,7 @@ export default function MoonPhasesPage({ onBack }) {
           <div className={styles.scrapbookDecoration} aria-hidden="true">📎</div>
           <div className={styles.sideBySide}>
             <div className={styles.imageWrapper}>
-              <img src="/moon_eight_phases_grid.png" alt="The eight phases of the moon" className={styles.largeCardImage} loading="lazy" />
+              <img src="/moon_eight_phases_grid.webp" alt="The eight phases of the moon" className={styles.largeCardImage} loading="lazy" />
               <div className={styles.sticker}>THE BIG 8</div>
             </div>
             <div className={styles.cardContent}>

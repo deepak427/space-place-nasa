@@ -178,19 +178,19 @@ export default function NeptunePage({ onBack }) {
  
       <div className={styles.factsGrid}>
         <div ref={structureRef} {...getStepAttrs(1)} className={`${styles.factCard} ${styles.rotate1}`}>
-          <img src="/neptune_ice_giant.png" alt="Inside Neptune" className={styles.cardImage} loading="lazy" />
+          <img src="/neptune_ice_giant.webp" alt="Inside Neptune" className={styles.cardImage} loading="lazy" />
           <h3>{t('neptuneIceTitle')}</h3>
           <p>{t('neptuneIceDesc')}</p>
         </div>
  
         <div ref={colorRef} {...getStepAttrs(2)} className={`${styles.factCard} ${styles.rotate2}`}>
-          <img src="/neptune_blue_methane.png" alt="Methane Blue" className={styles.cardImage} loading="lazy" />
+          <img src="/neptune_blue_methane.webp" alt="Methane Blue" className={styles.cardImage} loading="lazy" />
           <h3>{t('neptuneAtmosphereTitle')}</h3>
           <p>{t('neptuneAtmosphereDesc')}</p>
         </div>
  
         <div ref={timeRef} {...getStepAttrs(3)} className={`${styles.factCard} ${styles.rotateNegative1}`}>
-          <img src="/neptune_orbit_years.png" alt="Time on Neptune" className={styles.cardImage} loading="lazy" />
+          <img src="/neptune_orbit_years.webp" alt="Time on Neptune" className={styles.cardImage} loading="lazy" />
           <h3>{t('neptuneDayTitle')}</h3>
           <p>{t('neptuneDayDesc1')} {t('neptuneDayDesc2')}</p>
         </div>
@@ -203,7 +203,7 @@ export default function NeptunePage({ onBack }) {
             <p className={styles.sectionText}>{t('neptuneWindDesc')}</p>
           </div>
           <div className={styles.imageWrapper}>
-            <img src="/neptune_windy_clouds.png" alt="Windy Neptune" className={styles.largeCardImage} loading="lazy" />
+            <img src="/neptune_windy_clouds.webp" alt="Windy Neptune" className={styles.largeCardImage} loading="lazy" />
           </div>
         </div>
       </div>

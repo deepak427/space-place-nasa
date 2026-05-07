@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.characterDoodle}>
-        <img src="/footer_doodle.png" alt="" aria-hidden="true" />
+        <img src="/footer_doodle.webp" alt="" aria-hidden="true" />
       </div>
       <div className={styles.crateLabel}>{t('missionCrate')}</div>
       <nav aria-label="Footer links" className={styles.links}>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { spaceSFX } from '../utils/audio'
-import onboardingRocket from '../assets/onboarding-rocket.png'
-import onboardingCloud from '../assets/onboarding-cloud.png'
+import onboardingRocket from '../assets/onboarding-rocket.webp'
+import onboardingCloud from '../assets/onboarding-cloud.webp'
 import styles from './Onboarding.module.css'
 import { useLanguage } from '../context/LanguageContext'
 

@@ -293,13 +293,13 @@ export default function MoonDistancePage({ onBack }) {
         </div>
  
         <div ref={thirtyEarthsRef} {...getStepAttrs(2)} className={`${styles.factCard} ${styles.rotate2}`}>
-          <img src="/moon_distance_30_earths.png" alt="30 Earths lined up between Earth and Moon" className={styles.cardImage} loading="lazy" />
+          <img src="/moon_distance_30_earths.webp" alt="30 Earths lined up between Earth and Moon" className={styles.cardImage} loading="lazy" />
           <h3>{t('distThirtyTitle')}</h3>
           <p>{t('distThirtyDesc')}</p>
         </div>
  
         <div ref={orbitRef} {...getStepAttrs(3)} className={`${styles.factCard} ${styles.rotateNegative1}`}>
-          <img src="/moon_distance_orbit.png" alt="Elliptical orbit of the Moon" className={styles.cardImage} loading="lazy" />
+          <img src="/moon_distance_orbit.webp" alt="Elliptical orbit of the Moon" className={styles.cardImage} loading="lazy" />
           <h3>{t('distOrbitTitle')}</h3>
           <p>{t('distOrbitDesc')}</p>
         </div>
@@ -398,7 +398,7 @@ export default function MoonDistancePage({ onBack }) {
           <div className={styles.scrapbookDecoration} aria-hidden="true">📎</div>
           <div className={styles.sideBySide}>
             <div className={styles.imageWrapper}>
-              <img src="/moon_distance_activity.png" alt="Basketball Earth and Tennis Ball Moon activity" className={styles.largeCardImage} loading="lazy" />
+              <img src="/moon_distance_activity.webp" alt="Basketball Earth and Tennis Ball Moon activity" className={styles.largeCardImage} loading="lazy" />
               <div className={styles.sticker}>TRY THIS!</div>
             </div>
             <div className={styles.cardContent}>

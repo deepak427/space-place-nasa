@@ -178,13 +178,13 @@ export default function LaunchPage({ onBack }) {
  
       <div className={styles.factsGrid}>
         <div ref={physicsRef} {...getStepAttrs(1)} className={`${styles.factCard} ${styles.rotate1}`}>
-          <img src="/launch_rocket_physics.png" alt="Rocket Action and Reaction" className={styles.cardImage} loading="lazy" />
+          <img src="/launch_rocket_physics.webp" alt="Rocket Action and Reaction" className={styles.cardImage} loading="lazy" />
           <h3>{t('launchPhysicsTitle')}</h3>
           <p>{t('launchPhysicsDesc')}</p>
         </div>
  
         <div ref={thrustRef} {...getStepAttrs(2)} className={`${styles.factCard} ${styles.rotate2}`}>
-          <img src="/launch_thrust_gravity.png" alt="Thrust vs Gravity" className={styles.cardImage} loading="lazy" />
+          <img src="/launch_thrust_gravity.webp" alt="Thrust vs Gravity" className={styles.cardImage} loading="lazy" />
           <h3>{t('launchTugTitle')}</h3>
           <p>{t('launchTugDesc')}</p>
         </div>
@@ -204,7 +204,7 @@ export default function LaunchPage({ onBack }) {
             <p className={styles.sectionText}>{t('launchOrbitDesc2')}</p>
           </div>
           <div className={styles.imageWrapper}>
-            <img src="/launch_orbit_balance.png" alt="Orbit Balance" className={styles.largeCardImage} loading="lazy" />
+            <img src="/launch_orbit_balance.webp" alt="Orbit Balance" className={styles.largeCardImage} loading="lazy" />
           </div>
         </div>
       </div>
@@ -213,7 +213,7 @@ export default function LaunchPage({ onBack }) {
         <div className={styles.scrapbookDecoration} aria-hidden="true">📍</div>
         <div className={styles.sideBySide}>
           <div className={styles.imageWrapper}>
-            <img src="/launch_mars_window.png" alt="Mars Launch Window" className={styles.largeCardImage} loading="lazy" />
+            <img src="/launch_mars_window.webp" alt="Mars Launch Window" className={styles.largeCardImage} loading="lazy" />
             <div className={styles.sticker}>PLANET HOP!</div>
           </div>
           <div className={styles.cardContent}>

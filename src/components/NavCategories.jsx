@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import styles from './NavCategories.module.css'
 
-import iconEarth from '../assets/icon-earth.png'
-import iconSun from '../assets/icon-sun.png'
-import iconSolarSystem from '../assets/icon-solar-system.png'
-import iconUniverse from '../assets/icon-universe.png'
-import iconScience from '../assets/icon-science.png'
-import iconEducators from '../assets/icon-educators.png'
+import iconEarth from '../assets/icon-earth.webp'
+import iconSun from '../assets/icon-sun.webp'
+import iconSolarSystem from '../assets/icon-solar-system.webp'
+import iconUniverse from '../assets/icon-universe.webp'
+import iconScience from '../assets/icon-science.webp'
+import iconEducators from '../assets/icon-educators.webp'
 
 import { useLanguage } from '../context/LanguageContext'
 
@@ -54,7 +54,7 @@ export default function NavCategories({ onMoonClick }) {
   const allCategories = [
     {
       label: t('moon'),
-      icon: '/moon_cartoon.png',
+      icon: '/moon_cartoon.webp',
       href: `/all-about-the-moon/${language}/`,
       color: 'var(--amber-soft)',
     },

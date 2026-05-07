@@ -458,19 +458,19 @@ export default function MoonPage({ onBack }) {
       </section>
       <div className={styles.factsGrid}>
         <div ref={factGlowRef} {...getStepAttrs(3)}>
-          <img src="/moon_glow.png" alt="A diagram showing that the Moon doesn't make its own light—it reflects the Sun's light like a giant space mirror!" className={`${styles.cardImage} ${journeyActive && currentStep === 3 ? styles.glowImage : ''}`} loading="lazy" />
+          <img src="/moon_glow.webp" alt="A diagram showing that the Moon doesn't make its own light—it reflects the Sun's light like a giant space mirror!" className={`${styles.cardImage} ${journeyActive && currentStep === 3 ? styles.glowImage : ''}`} loading="lazy" />
           <h3>{t('moonGlowTitle')}</h3>
           <p>{t('moonGlowDesc')}</p>
         </div>
 
         <div ref={factDarkSideRef} {...getStepAttrs(4)}>
-          <img src="/moon_dark_side.png" alt="A view of the Moon from space showing that both sides get sunlight at different times, even though we only see one side from Earth." className={styles.cardImage} loading="lazy" />
+          <img src="/moon_dark_side.webp" alt="A view of the Moon from space showing that both sides get sunlight at different times, even though we only see one side from Earth." className={styles.cardImage} loading="lazy" />
           <h3>{t('moonDarkSideTitle')}</h3>
           <p>{t('moonDarkSideDesc')}</p>
         </div>
 
         <div ref={factFormationRef} {...getStepAttrs(5)}>
-          <img src="/moon_formation.png" alt="A massive space rock the size of Mars crashing into the young Earth, sending chunks into space to form our Moon." className={styles.cardImage} loading="lazy" />
+          <img src="/moon_formation.webp" alt="A massive space rock the size of Mars crashing into the young Earth, sending chunks into space to form our Moon." className={styles.cardImage} loading="lazy" />
           <h3>{t('moonFormationTitle')}</h3>
           <p>{t('moonFormationDesc')}</p>
         </div>
@@ -481,7 +481,7 @@ export default function MoonPage({ onBack }) {
           <div className={styles.scrapbookDecoration} aria-hidden="true">📎</div>
           <div className={styles.sideBySide}>
             <div className={styles.imageWrapper}>
-              <img src="/moon_study.png" alt="Astronauts working on the Moon's dusty surface next to their lunar lander spacecraft." className={styles.largeCardImage} loading="lazy" />
+              <img src="/moon_study.webp" alt="Astronauts working on the Moon's dusty surface next to their lunar lander spacecraft." className={styles.largeCardImage} loading="lazy" />
               <div className={styles.sticker}>TOP SECRET</div>
             </div>
             <div className={styles.cardContent}>
@@ -498,7 +498,7 @@ export default function MoonPage({ onBack }) {
         <div className={`${styles.wobblyCard} ${styles.hollowCard} ${styles.rotateNegative1}`}>
           <div className={`${styles.sideBySide} ${styles.reverse}`}>
             <div className={styles.imageWrapper}>
-              <img src="/moon_craters.png" alt="A close-up of the Moon showing deep craters from space rock impacts and dark lava plains called maria." className={styles.largeCardImage} loading="lazy" />
+              <img src="/moon_craters.webp" alt="A close-up of the Moon showing deep craters from space rock impacts and dark lava plains called maria." className={styles.largeCardImage} loading="lazy" />
             </div>
             <div className={styles.cardContent}>
               <h2 className={`${styles.sectionTitle} ${styles.darkTitle}`}>{t('moonKnowledgeTitle')}</h2>

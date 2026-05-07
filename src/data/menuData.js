@@ -4,7 +4,7 @@ export const menuData = {
       title: "Play",
       subtitle: "Space Games",
       description: "Launch your imagination with these cosmic games and challenges!",
-      heroImage: "/menu_play_hero.png",
+      heroImage: "/menu_play_hero.webp",
       items: [
         {
           title: "CubeSat Builder",
@@ -60,7 +60,7 @@ export const menuData = {
       title: "Do",
       subtitle: "Crafts & Projects",
       description: "Get hands-on with these amazing space-themed crafts and experiments!",
-      heroImage: "/menu_do_hero.png",
+      heroImage: "/menu_do_hero.webp",
       items: [
         {
           title: "Make Planet Masks!",
@@ -116,7 +116,7 @@ export const menuData = {
       title: "Activities",
       subtitle: "Explore & Discover",
       description: "Deep dive into space science with these interactive explorations!",
-      heroImage: "/menu_activities_hero.png",
+      heroImage: "/menu_activities_hero.webp",
       items: [
         {
           title: "Experiment Center",
@@ -172,7 +172,7 @@ export const menuData = {
       title: "Watch",
       subtitle: "Quick Bites",
       description: "Sit back and enjoy these short, fascinating space videos!",
-      heroImage: "/menu_watch_hero.png",
+      heroImage: "/menu_watch_hero.webp",
       items: [
         {
           title: "Launch into Space!",
@@ -228,7 +228,7 @@ export const menuData = {
       title: "Words",
       subtitle: "Space Glossary",
       description: "Learn the secret language of astronomers and space explorers!",
-      heroImage: "/menu_words_hero.png",
+      heroImage: "/menu_words_hero.webp",
       items: [
         {
           title: "Asteroid",
@@ -286,7 +286,7 @@ export const menuData = {
       title: "Jugar",
       subtitle: "Juegos Espaciales",
       description: "¡Lanza tu imaginación con estos juegos y desafíos cósmicos!",
-      heroImage: "/menu_play_hero.png",
+      heroImage: "/menu_play_hero.webp",
       items: [
         {
           title: "Constructor de CubeSats",
@@ -342,7 +342,7 @@ export const menuData = {
       title: "Hacer",
       subtitle: "Manualidades y Proyectos",
       description: "¡Ponte manos a la obra con estas increíbles manualidades y experimentos!",
-      heroImage: "/menu_do_hero.png",
+      heroImage: "/menu_do_hero.webp",
       items: [
         {
           title: "¡Haz Máscaras de Planetas!",
@@ -398,7 +398,7 @@ export const menuData = {
       title: "Actividades",
       subtitle: "Explorar y Descubrir",
       description: "¡Sumérgete en la ciencia espacial con estas exploraciones!",
-      heroImage: "/menu_activities_hero.png",
+      heroImage: "/menu_activities_hero.webp",
       items: [
         {
           title: "Centro de Experimentos",
@@ -454,7 +454,7 @@ export const menuData = {
       title: "Ver",
       subtitle: "Bocados Rápidos",
       description: "¡Disfruta de estos videos espaciales cortos y fascinantes!",
-      heroImage: "/menu_watch_hero.png",
+      heroImage: "/menu_watch_hero.webp",
       items: [
         {
           title: "¡Lanzamiento al Espacio!",
@@ -510,7 +510,7 @@ export const menuData = {
       title: "Palabras",
       subtitle: "Glosario Espacial",
       description: "¡Aprende el lenguaje secreto de los exploradores espaciales!",
-      heroImage: "/menu_words_hero.png",
+      heroImage: "/menu_words_hero.webp",
       items: [
         {
           title: "Asteroide",
