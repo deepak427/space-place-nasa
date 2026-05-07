@@ -12,7 +12,7 @@ export const playVoice = async (text, language, onEnd) => {
   stopVoice(); // Stop any currently playing audio
 
   try {
-    const hash = await getHash(`${language}:${text}`);
+    const hash = await getHash(text);
     const cache = await caches.open('cosmic-voice-cache');
     
     // 1. Check browser persistent cache
@@ -85,7 +85,8 @@ export const playVoice = async (text, language, onEnd) => {
         currentAudio.play();
         return;
       } else {
-        console.error("ElevenLabs API error:", await response.text());
+        const errorText = await response.text();
+        console.error(`ElevenLabs API error [${response.status}]:`, errorText);
       }
     }
   } catch (err) {
