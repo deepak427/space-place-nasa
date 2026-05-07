@@ -1,0 +1,169 @@
+.footer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto 3rem auto;
+  padding: 4rem 2.5rem 3rem 2.5rem;
+  background: var(--amber-dark);
+  border: var(--border-hand);
+  border-radius: var(--radius-wobbly);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  box-shadow: var(--shadow-card);
+  transform: rotate(-1deg);
+  position: relative;
+}
+
+.characterDoodle {
+  position: absolute;
+  top: -65px;
+  right: 40px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  transform: rotate(5deg);
+  pointer-events: none;
+}
+
+.characterDoodle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.crateLabel {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--paper-bg);
+  background: var(--amber-soft);
+  padding: 0.4rem 1.2rem;
+  border-radius: 4px;
+  transform: rotate(2deg) translateY(-10px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 4px 4px 0 var(--text-main);
+  border: 2px solid var(--text-main);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 2rem;
+}
+
+.sticker {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: none;
+  background: var(--paper-bg);
+  padding: 0.8rem 1.5rem;
+  border: 3px solid var(--text-main);
+  border-radius: 12px 4px 15px 6px / 6px 15px 4px 12px;
+  transition: transform 0.2s var(--ease-pop), box-shadow 0.2s var(--ease-pop);
+  box-shadow: 4px 4px 0 var(--text-main);
+  position: relative;
+  overflow: hidden;
+}
+
+.sticker::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 45%, rgba(255,255,255,0.1) 50%, transparent 55%);
+  pointer-events: none;
+}
+
+/* Give each sticker a slightly different wobble */
+.sticker:nth-child(1) { transform: rotate(-2deg); }
+.sticker:nth-child(2) { transform: rotate(1deg); }
+.sticker:nth-child(3) { transform: rotate(-1.5deg); }
+.sticker:nth-child(4) { transform: rotate(2deg); }
+.sticker:nth-child(5) { transform: rotate(-0.5deg); }
+
+.sticker:hover,
+.sticker:focus-visible {
+  transform: scale(1.1) rotate(0deg) !important;
+  box-shadow: 8px 8px 0 var(--text-main);
+  background: var(--amber-soft);
+  outline: none;
+}
+
+.logEntry {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  transform: rotate(0.5deg);
+}
+
+.logIcon {
+  font-size: 1.2rem;
+}
+
+.logEntry p {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-main);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin: 3rem 1.5rem 2rem 1.5rem;
+    padding: 3.5rem 1.5rem 2.5rem 1.5rem;
+    width: auto;
+    transform: rotate(-0.5deg);
+  }
+
+  .characterDoodle {
+    width: 90px;
+    height: 90px;
+    top: -50px;
+    right: 20px;
+  }
+
+  .links {
+    gap: 1.25rem;
+  }
+
+  .sticker {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    margin: 2rem 1rem 1rem 1rem;
+    padding: 3rem 1rem 2rem 1rem;
+    gap: 2rem;
+    transform: rotate(-0.5deg); /* Kept rotation for character */
+  }
+
+  .characterDoodle {
+    width: 70px;
+    height: 70px;
+    top: -40px;
+    right: 10px;
+  }
+
+  .sticker {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: center;
+  }
+}

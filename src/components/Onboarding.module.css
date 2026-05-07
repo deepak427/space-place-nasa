@@ -1,0 +1,260 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--paper-bg);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s var(--ease-out-expo), visibility 0.8s;
+  overflow: hidden;
+}
+
+.skipButton {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 102;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  opacity: 0.8;
+}
+
+.skipButton:hover {
+  opacity: 1;
+}
+
+.shake {
+  animation: rumble 0.1s infinite;
+  will-change: transform;
+}
+
+.fade {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.rocketWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rocket {
+  width: clamp(140px, 40vw, 220px);
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  transition: transform 1.2s var(--ease-out-expo);
+  animation: hover 2s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+.launch {
+  transform: translateY(-200vh) scale(0.6) rotate(15deg);
+  animation: none;
+}
+
+.exhaust {
+  position: absolute;
+  bottom: -20px;
+  display: flex;
+  gap: 10px;
+}
+
+.puff {
+  width: 40px;
+  height: 40px;
+  background: var(--cosmic-universe);
+  border-radius: 50%;
+  opacity: 0;
+  animation: puffOut 0.5s ease-out forwards;
+}
+
+.puff:nth-child(2) { animation-delay: 0.1s; width: 60px; height: 60px; background: var(--cosmic-sun); }
+.puff:nth-child(3) { animation-delay: 0.2s; background: var(--cosmic-science); }
+
+.speedLines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 100px;
+  background: var(--cosmic-universe);
+  opacity: 0.4;
+  transform: translate(-50%, -50%) rotate(calc(var(--i) * 30deg)) translateY(-300px);
+  animation: speedLine 0.2s linear infinite;
+}
+
+.whoosh {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 5rem);
+  /* Use darker color for better contrast against amber flash */
+  color: var(--paper-bg);
+  top: 25%;
+  z-index: 101; /* Above the flash */
+  animation: floatingText 1.4s var(--ease-pop) forwards, burstShadow 1.4s var(--ease-pop) forwards;
+  text-shadow: 
+    4px 4px 0 var(--amber-dark),
+    -1px -1px 0 var(--amber-dark),
+    1px -1px 0 var(--amber-dark),
+    -1px 1px 0 var(--amber-dark),
+    1px 1px 0 var(--amber-dark);
+}
+
+.rumble {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  color: var(--amber-soft);
+  bottom: 25%;
+  animation: shakeText 0.1s infinite;
+  text-shadow: 2px 2px 0 var(--amber-dark);
+}
+
+.flash {
+  position: absolute;
+  inset: 0;
+  /* Radial burst for more cinematic depth */
+  background: radial-gradient(circle, var(--text-main) 0%, var(--amber-bright) 40%, transparent 100%);
+  z-index: 100;
+  pointer-events: none;
+  animation: flashOut 0.7s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  mix-blend-mode: plus-lighter;
+}
+
+@keyframes flashOut {
+  0% { opacity: 0; transform: scale(0.8); }
+  5% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.2); }
+}
+
+@keyframes burstShadow {
+  0% { text-shadow: 0 0 0 var(--text-main); }
+  5% { text-shadow: 0 0 40px var(--text-main), 0 0 80px var(--amber-bright); }
+  20% { 
+    text-shadow: 
+      4px 4px 0 var(--amber-dark),
+      -1px -1px 0 var(--amber-dark),
+      1px -1px 0 var(--amber-dark),
+      -1px 1px 0 var(--amber-dark),
+      1px 1px 0 var(--amber-dark);
+  }
+}
+
+.counter {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 15vw, 8rem);
+  font-weight: 700;
+  color: var(--count-color, var(--amber-soft));
+  margin-top: clamp(1rem, 5vh, 2rem);
+  text-shadow: clamp(4px, 1vw, 8px) clamp(4px, 1vw, 8px) 0 var(--amber-dark);
+  /* 0.7s duration gives more weight while still finishing before the 0.8s tick */
+  animation: counterEntrance 0.7s var(--ease-out-quart) forwards;
+  line-height: 1;
+  will-change: transform, opacity;
+}
+
+
+.cloud {
+  position: absolute;
+  width: 350px;
+  height: auto;
+  opacity: 0.2;
+  z-index: -1;
+  /* Simplified filter for performance */
+  filter: contrast(0.8) grayscale(0.2);
+  will-change: transform;
+}
+
+/* Remove filters during shake to maintain 60fps */
+.shake .cloud {
+  filter: none;
+}
+
+.cloud1 {
+  bottom: 5%;
+  left: -80px;
+  animation: floatCloud 12s ease-in-out infinite alternate;
+}
+
+.cloud2 {
+  bottom: 15%;
+  right: -80px;
+  animation: floatCloud 15s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes counterEntrance {
+  0% { transform: scale(0.3) rotate(-12deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+@keyframes rumble {
+  0% { transform: translate(0,0); }
+  25% { transform: translate(2px, 2px); }
+  50% { transform: translate(-2px, -2px); }
+  75% { transform: translate(2px, -2px); }
+  100% { transform: translate(0,0); }
+}
+
+@keyframes puffOut {
+  0% { transform: scale(0.5) translateY(0); opacity: 0.8; }
+  100% { transform: scale(3) translateY(100px); opacity: 0; }
+}
+
+@keyframes speedLine {
+  0% { transform: translate(-50%, -50%) rotate(calc(var(--i) * 30deg)) translateY(-300px) scaleY(1); opacity: 0.4; }
+  100% { transform: translate(-50%, -50%) rotate(calc(var(--i) * 30deg)) translateY(300px) scaleY(2); opacity: 0; }
+}
+
+@keyframes floatingText {
+  0% { transform: scale(0.3) translateY(50px) rotate(-10deg); opacity: 0; }
+  15% { transform: scale(1.2) translateY(-20px) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) translateY(-150px) rotate(0); opacity: 0; }
+}
+
+@keyframes shakeText {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes hover {
+  0% { transform: translateY(0) rotate(-3deg) scale(1); }
+  100% { transform: translateY(-40px) rotate(3deg) scale(1.05); }
+}
+
+@keyframes floatCloud {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(80px, -40px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .shake,
+  .rocket,
+  .puff,
+  .line,
+  .whoosh,
+  .rumble,
+  .flash,
+  .counter,
+  .cloud {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .launch {
+    transform: none !important;
+  }
+}

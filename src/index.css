@@ -1,0 +1,234 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Sunset Amber Monochromatic Softness */
+  --paper-bg: oklch(25% 0.04 45); /* Deep Burnt Sienna */
+  --paper-mid: oklch(35% 0.06 45);
+  
+  --amber-soft: oklch(75% 0.12 50); /* Main Soft Amber */
+  --amber-bright: oklch(85% 0.15 55); /* Highlights */
+  --amber-dark: oklch(40% 0.08 45); /* Deep Accents */
+  
+  --text-main: oklch(95% 0.03 60); /* Creamy Off-white */
+  
+  /* Typography */
+  --font-display: 'Fredoka', sans-serif;
+  --font-body: 'Comic Neue', sans-serif;
+  
+  /* Wobbly Hand-Drawn Borders */
+  --radius-wobbly: 15px 40px 25px 50px / 45px 20px 55px 30px;
+  --border-hand: 4px solid var(--amber-dark);
+  
+  /* Snappy Pop-out Motion */
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --shadow-pop: 8px 8px 0 var(--amber-dark);
+  --shadow-card: 6px 6px 0 var(--amber-dark);
+
+  /* Layout */
+  --container-max: 1100px;
+
+  /* Semantic Colors */
+  --color-alert: oklch(65% 0.2 35); /* "TOP SECRET" Coral */
+  --glow-soft: oklch(75% 0.12 50 / 0.4);
+  --glow-bright: oklch(85% 0.15 55 / 0.6);
+
+  /* Monochromatic Sunset Palette (Monochrome Amber Mandate) */
+  --cosmic-earth: oklch(85% 0.07 55);    /* Soft Ochre */
+  --cosmic-sun: oklch(92% 0.10 75);      /* Bright Sunbeam */
+  --cosmic-system: oklch(84% 0.05 45);   /* Pale Sienna */
+  --cosmic-universe: oklch(88% 0.03 50); /* Dusty Parchment */
+  --cosmic-science: oklch(86% 0.08 40);  /* Soft Amber */
+  --cosmic-educator: oklch(86% 0.06 65); /* Pale Gold hardened */
+}
+
+/* Paper Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* High-Contrast Focus States for A11y */
+:focus-visible {
+  outline: 4px solid var(--amber-bright);
+  outline-offset: 4px;
+  border-radius: var(--radius-wobbly);
+}
+
+button:focus-visible {
+  outline-offset: 8px;
+}
+
+.squishy-link:focus-visible {
+  border-radius: 4px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--paper-bg);
+  background-image: 
+    radial-gradient(circle at 50% 50%, var(--paper-mid) 0%, var(--paper-bg) 100%),
+    url('./assets/cosmic-doodles.png');
+  background-size: cover, 1200px;
+  background-blend-mode: overlay;
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  font-size: 22px; /* Increased for kids */
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* Stardust Layers */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, var(--amber-soft), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, var(--text-main), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, var(--amber-bright), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, var(--amber-soft), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 130px 80px, var(--text-main), rgba(0,0,0,0));
+  background-size: 200px 200px;
+  animation: drift 60s linear infinite;
+}
+
+@keyframes drift {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--amber-bright);
+  line-height: 1.1;
+  text-wrap: balance;
+  text-shadow: 4px 4px 0 var(--amber-dark);
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 4rem; transform: rotate(-1.5deg); }
+h2 { font-size: 2.5rem; transform: rotate(1deg); margin-bottom: 1rem; }
+h3 { font-size: 1.8rem; transform: rotate(-0.5deg); }
+
+p {
+  margin-bottom: 1.5rem;
+  max-width: 65ch;
+  line-height: 1.6;
+}
+
+.drop-cap::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  float: left;
+  line-height: 1;
+  margin-right: 0.5rem;
+  color: var(--amber-bright);
+  text-shadow: 3px 3px 0 var(--amber-dark);
+  transform: rotate(-5deg);
+}
+
+
+.squishy-link {
+  color: var(--amber-soft);
+  text-decoration: underline wavy var(--amber-dark);
+  font-weight: 700;
+  transition: transform 0.2s var(--ease-pop), color 0.2s var(--ease-pop);
+  display: inline-block;
+}
+
+.squishy-link:hover {
+  transform: scale(1.1) rotate(2deg);
+  color: var(--amber-bright);
+}
+
+.wavy-text {
+  display: inline-block;
+  animation: wavy 2s ease-in-out infinite;
+}
+
+@keyframes wavy {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Playful Clusters Layout */
+.cluster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  padding: 4rem 2rem;
+}
+
+/* Snappy Pop-out Button */
+button {
+  cursor: pointer;
+  font-family: var(--font-display);
+  background: var(--amber-soft);
+  color: var(--paper-bg);
+  border: var(--border-hand);
+  border-radius: var(--radius-wobbly);
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s var(--ease-pop), background 0.2s var(--ease-pop), box-shadow 0.2s var(--ease-pop);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+button:hover {
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: var(--shadow-pop);
+  background: var(--amber-bright);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 2px 2px 0 var(--amber-dark);
+}
+
+/* Wobbly Paper Card */
+.ds-card {
+  background: var(--text-main);
+  color: var(--paper-bg);
+  border: var(--border-hand);
+  border-radius: var(--radius-wobbly);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s var(--ease-pop);
+}
+
+.ds-card:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  box-shadow: var(--shadow-pop);
+}
+
+

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-02T12:54:00Z",
+  "title": "Design System: The Playful Playground",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Supernova Orange", "canonical": "oklch(75% 0.25 45)", "tonalRamp": ["#4d2a00", "#7d4500", "#a65c00", "#cf7300", "#ff8c00", "#ffa333", "#ffba66", "#ffd199"] },
+      "secondary": { "role": "secondary", "displayName": "Lime Comet", "canonical": "oklch(85% 0.25 140)", "tonalRamp": ["#2b4d00", "#467d00", "#5da600", "#74cf00", "#8fff00", "#a5ff33", "#bbff66", "#d1ff99"] },
+      "neutral-bg": { "role": "background", "displayName": "Deep Blackberry", "canonical": "oklch(20% 0.08 300)", "tonalRamp": ["#1a0a1a", "#2b112b", "#3c173c", "#4d1e4d", "#6a2a6a", "#873587", "#a441a4", "#c14cc1"] }
+    },
+    "shadows": [
+      { "name": "chunky", "value": "0 6px 0 oklch(10% 0.05 300)", "purpose": "Solid cartoonish elevation." },
+      { "name": "hover", "value": "0 10px 0 oklch(10% 0.05 300)", "purpose": "Interactive state elevation." }
+    ],
+    "motion": [
+      { "name": "squish", "value": "cubic-bezier(0.175, 0.885, 0.32, 1.275)", "purpose": "Playful, bouncy feedback." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Cartoon Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Thick-bordered, orange, squishy button.",
+      "html": "<button class=\"ds-btn-cartoon\">PLAY!</button>",
+      "css": ".ds-btn-cartoon { background: var(--orange); border: var(--border-thick); border-radius: var(--radius-md); box-shadow: var(--shadow-chunky); transition: transform 0.2s var(--ease-squish); } .ds-btn-cartoon:hover { transform: translateY(-4px) rotate(-1deg); background: var(--lime); }"
+    },
+    {
+      "name": "Activity Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "White background, thick borders, playful rotation on hover.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Cool Activity</h3><p>Let's learn about space!</p></div>",
+      "css": ".ds-card { background: #fff; border: var(--border-thick); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-chunky); } .ds-card:hover { transform: translateY(-8px) rotate(1deg); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Cartoonish Cosmos",
+    "overview": "A digital playground where science feels like a toy. Thick outlines, warm colors, and bouncy movement.",
+    "keyCharacteristics": ["Cartoonish & Bold", "Anti-Blue", "Breathable Layout"],
+    "rules": [
+      { "name": "Anti-Blue Rule", "body": "Pure blues are strictly prohibited. Use warm purples or oranges for space.", "section": "colors" },
+      { "name": "Thick Outline Rule", "body": "All containers must have a minimum 3px solid dark border.", "section": "layout" }
+    ],
+    "dos": ["Do use 20px+ font sizes", "Do use slightly tilted elements"],
+    "donts": ["Don't use glassmorphism", "Don't use subtle gradients"]
+  }
+}

@@ -1,0 +1,266 @@
+.header {
+  width: 95%;
+  max-width: var(--container-max);
+  margin: clamp(1rem, 4vh, 3rem) auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  flex-wrap: wrap;
+  /* Vibrant amber background to completely fix the 'too dark' issue */
+  background: #fca311;
+  /* Safe fallback */
+  background: var(--amber-bright);
+  box-shadow:
+    var(--shadow-card),
+    inset 0 0 60px rgba(255, 255, 255, 0.3),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--amber-dark);
+  border-radius: var(--radius-wobbly);
+  transition: transform 0.4s var(--ease-pop);
+  transform: rotate(0.8deg);
+  position: relative;
+  z-index: 20;
+}
+
+/* Removed muddy offset shadow per user request */
+
+
+.header:hover {
+  transform: rotate(0deg) scale(1.005);
+}
+
+.header:hover::after {
+  transform: translate(12px, 12px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  margin: -0.5rem;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.3s var(--ease-pop);
+  flex: 1 1 auto;
+}
+
+.brand:hover {
+  transform: scale(1.02) rotate(-0.5deg);
+}
+
+.nasaLogo {
+  width: clamp(80px, 10vw, 110px);
+  height: auto;
+  flex-shrink: 0;
+  transition: transform 0.4s var(--ease-pop);
+  filter: contrast(1.1) brightness(0.9) sepia(0.3) hue-rotate(-10deg);
+}
+
+.brand:hover .nasaLogo {
+  transform: scale(1.15) rotate(-12deg);
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nasaScience {
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  font-weight: 700;
+  color: var(--paper-bg);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.85;
+}
+
+.spacePlace {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  color: var(--paper-bg);
+  line-height: 0.85;
+  margin: 0.2rem 0;
+  transform: skewX(-2deg);
+  letter-spacing: -0.03em;
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  font-weight: 700;
+  color: var(--paper-bg);
+  margin-top: 0.2rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+  flex: 0 1 auto;
+}
+
+.topLinks {
+  margin-bottom: 0;
+}
+
+.spanishLink {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--amber-soft);
+  background: var(--paper-bg);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-wobbly);
+  text-decoration: none;
+  transition: all 0.3s var(--ease-pop);
+  box-shadow: 4px 4px 0 var(--amber-dark);
+  white-space: nowrap;
+  transform: rotate(-1.5deg) translateY(5px);
+  display: inline-block;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.spanishLink:hover {
+  transform: scale(1.1) rotate(2deg);
+  background: var(--paper-mid);
+  box-shadow: 6px 6px 0 var(--amber-dark);
+}
+
+.searchForm {
+  display: flex;
+  background: oklch(98% 0.02 60);
+  /* Warm amber-tinted cream */
+  border: 3px solid var(--paper-bg);
+  border-radius: var(--radius-wobbly);
+  padding: 4px;
+  box-shadow: 6px 6px 0 var(--paper-bg);
+  transition: all 0.3s var(--ease-pop);
+  min-width: clamp(200px, 25vw, 350px);
+  transform: rotate(0.5deg);
+}
+
+.searchForm:focus-within {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 10px 10px 0 var(--paper-bg);
+}
+
+.searchForm[data-error="true"] {
+  animation: shake 0.4s var(--ease-pop);
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0) rotate(1deg);
+  }
+
+  25% {
+    transform: translateX(-10px) rotate(-2deg);
+  }
+
+  75% {
+    transform: translateX(10px) rotate(3deg);
+  }
+}
+
+.searchInput {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  color: var(--paper-bg);
+  flex: 1;
+  min-width: 0;
+  letter-spacing: 0.01em;
+}
+
+.searchInput::placeholder {
+  color: var(--paper-bg);
+  opacity: 0.8;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.searchBtn {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.4rem 1.2rem;
+  background: var(--amber-bright);
+  color: var(--paper-bg);
+  border: 3px solid var(--paper-bg);
+  border-radius: var(--radius-wobbly);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-pop);
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.searchBtn:hover {
+  transform: scale(1.08) rotate(-3deg);
+  background: var(--text-main);
+  border-color: var(--amber-dark);
+}
+
+@media (max-width: 950px) {
+  .header {
+    width: calc(100% - 2rem);
+    margin: 1rem auto;
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 2rem;
+    transform: rotate(0.5deg);
+  }
+
+  .brand {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .titleBlock {
+    align-items: center;
+  }
+
+  .spacePlace {
+    font-size: 3rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .spanishLink {
+    width: 80%;
+    text-align: center;
+    transform: rotate(1deg);
+  }
+
+  .searchForm {
+    width: 100%;
+    transform: rotate(-0.5deg);
+  }
+}

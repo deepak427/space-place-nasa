@@ -1,0 +1,128 @@
+.nav {
+  width: 100%;
+  max-width: 1200px;
+  margin: 1rem auto 4rem auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1rem, 2vw, 2rem);
+  transform: rotate(0.8deg);
+}
+
+@media (max-width: 480px) {
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 150px;
+  padding: 1.5rem 1rem;
+  background: var(--amber-soft);
+  border: var(--border-hand);
+  border-radius: var(--radius-wobbly);
+  color: var(--paper-bg);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 
+    transform 0.2s var(--ease-pop), 
+    box-shadow 0.2s var(--ease-pop), 
+    background 0.2s var(--ease-pop);
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 1rem;
+  }
+}
+
+.item:hover,
+.item:focus-visible {
+  transform: translateY(-4px) scale(1.04) rotate(1.5deg);
+  box-shadow: var(--shadow-pop);
+  background: var(--amber-bright);
+  outline: none;
+}
+
+.item:nth-child(even):hover,
+.item:nth-child(even):focus-visible {
+  transform: translateY(-4px) scale(1.04) rotate(-1.5deg);
+}
+
+.item:active {
+  transform: translateY(0) scale(0.95);
+  box-shadow: 2px 2px 0 var(--amber-dark);
+}
+
+.emoji {
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  line-height: 1;
+  filter: contrast(0.8) sepia(1) hue-rotate(-20deg) drop-shadow(4px 4px 0 oklch(from var(--amber-dark) l c h / 0.1));
+  transition: transform 0.3s var(--ease-pop);
+}
+
+.item:hover .emoji {
+  transform: scale(1.08) rotate(-5deg);
+}
+
+.label {
+  line-height: 1.2;
+}
+
+.externalArrow {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--amber-bright);
+  color: var(--paper-bg);
+  border: 2px solid var(--amber-dark);
+  border-radius: 8px 15px 10px 12px / 12px 10px 15px 8px;
+  box-shadow: 2px 2px 0 var(--amber-dark);
+  opacity: 0;
+  transform: scale(0.5) rotate(-15deg);
+  transition: transform 0.4s var(--ease-pop), opacity 0.3s ease;
+  z-index: 2;
+  padding: 3px;
+  pointer-events: none;
+}
+
+.item:hover .externalArrow,
+.item:focus-visible .externalArrow {
+  opacity: 1;
+  transform: scale(1) rotate(5deg);
+}
+
+.externalArrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 480px) {
+  .externalArrow {
+    top: 4px;
+    right: 4px;
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+}

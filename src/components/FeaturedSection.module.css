@@ -1,0 +1,458 @@
+.section {
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3.5rem;
+}
+
+.moonGrid {
+  grid-column: span 8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.5rem 2.5rem;
+  align-items: flex-start;
+  transform: rotate(-0.5deg);
+}
+
+.moonCard {
+  background: var(--text-main);
+  background-image: radial-gradient(circle at 0% 0%, var(--amber-soft) 0%, transparent 70%);
+  background-blend-mode: soft-light;
+  border: var(--border-hand);
+  border-radius: var(--radius-wobbly);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease-pop), box-shadow 0.2s var(--ease-pop), filter 0.2s var(--ease-pop);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 300px;
+}
+
+.moonCard:nth-child(1) {
+  flex: 1 1 100%;
+  transform: rotate(-1deg) translateY(-8px);
+  min-height: 400px;
+}
+
+/* Fluid typography for the enlarged first card */
+.moonCard:first-child .moonTitle {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  padding: clamp(2rem, 5vw, 3rem);
+}
+
+.moonCard:first-child .moonImgWrap {
+  aspect-ratio: 21 / 9;
+}
+
+@media (max-width: 1000px) {
+  .moonCard:nth-child(1) {
+    min-height: auto;
+  }
+  
+  .moonCard:first-child .moonImgWrap {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.moonCard:nth-child(2) {
+  transform: rotate(1.5deg) translateY(12px) translateX(-10px);
+}
+
+.moonCard:nth-child(3) {
+  transform: rotate(-2deg) translateY(-5px) translateX(10px);
+}
+
+.moonCard:hover {
+  transform: translateY(-8px) rotate(-1deg) scale(1.02) !important;
+  box-shadow: var(--shadow-pop);
+  z-index: 5;
+}
+
+.moonImgWrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--amber-soft);
+  border-bottom: var(--border-hand);
+}
+
+.moonImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+}
+
+.moonTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--paper-bg);
+  padding: 1.5rem;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.sidebar {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  transform: rotate(1deg);
+}
+
+.skywatchCard {
+  background: var(--cosmic-universe);
+  border: var(--border-hand);
+  border-radius: var(--radius-wobbly);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s var(--ease-pop), box-shadow 0.2s var(--ease-pop), filter 0.2s var(--ease-pop);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skywatchCard:hover {
+  transform: scale(1.05) rotate(-1.5deg) translateY(-8px);
+  box-shadow: var(--shadow-pop);
+  filter: brightness(1.05);
+  z-index: 2;
+}
+
+.launchCard {
+  background: var(--cosmic-science);
+  border: var(--border-hand);
+  border-radius: var(--radius-wobbly);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s var(--ease-pop), box-shadow 0.2s var(--ease-pop), filter 0.2s var(--ease-pop);
+  text-decoration: none;
+}
+
+.launchCard:hover {
+  transform: scale(1.05) rotate(1.5deg) translateY(-8px);
+  box-shadow: var(--shadow-pop);
+  filter: brightness(1.05);
+  z-index: 2;
+}
+
+.dsnCard {
+  --dsn-density: var(--p-density, 1);
+  --dsn-pad: calc(var(--dsn-density) * 1.5rem);
+  --dsn-gap: calc(var(--dsn-density) * 2rem);
+  
+  grid-column: span 12;
+  background: var(--amber-dark);
+  border: var(--border-hand);
+  border-radius: 40px 40px 60px 60px / 60px 60px 40px 40px;
+  padding: var(--dsn-pad);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s var(--ease-pop), box-shadow 0.2s var(--ease-pop);
+  text-decoration: none;
+  margin-top: 3rem;
+  transform: rotate(-0.5deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--dsn-gap);
+  position: relative;
+  max-width: 900px;
+  justify-self: center;
+  width: 100%;
+}
+
+.dsnCard:hover {
+  transform: translateY(-8px) rotate(0.5deg) scale(1.01);
+  box-shadow: var(--shadow-pop);
+}
+
+.dsnScreen {
+  flex: 1;
+  background: var(--cosmic-system);
+  border: 4px solid var(--paper-bg);
+  border-radius: 20px;
+  padding: calc(var(--dsn-density) * 2rem) calc(var(--dsn-density) * 1.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--dsn-density) * 1.25rem);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    inset 8px 8px 0 rgba(0,0,0,0.1),
+    inset -4px -4px 0 rgba(255,255,255,0.1);
+  text-align: center;
+}
+
+.dsnScreen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.05) 50%
+  ), linear-gradient(
+    90deg, 
+    rgba(255, 0, 0, 0.02), 
+    rgba(0, 255, 0, 0.01), 
+    rgba(0, 0, 255, 0.02)
+  );
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.dsnScreen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(0,0,0,0.1) 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Subtle Screen Flicker */
+.dsnScreen {
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.99; }
+  50% { opacity: 1; }
+  100% { opacity: 0.995; }
+}
+
+.dsnControlsLeft,
+.dsnControlsRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--dsn-density) * 110px);
+  flex-shrink: 0;
+}
+
+.dpad {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  transform: rotate(-2deg);
+}
+
+.dpadVertical,
+.dpadHorizontal {
+  background: var(--paper-bg);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+}
+
+.dpadVertical {
+  width: 24px;
+  height: 70px;
+}
+
+.dpadHorizontal {
+  width: 70px;
+  height: 24px;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transform: rotate(3deg);
+}
+
+.actionBtn {
+  width: 48px;
+  height: 48px;
+  background: var(--paper-bg);
+  color: var(--amber-soft);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+}
+
+.actionBtn:last-child {
+  transform: translateX(-18px);
+}
+
+.dsnPlayPulse {
+  margin-top: 0.5rem;
+  background: var(--paper-bg);
+  color: var(--amber-soft);
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius-wobbly);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+  animation: pulse 1s infinite alternate;
+  cursor: pointer;
+  border: 2px solid var(--amber-soft);
+}
+
+@keyframes pulse {
+  from { transform: scale(1); box-shadow: 4px 4px 0 rgba(0,0,0,0.2); }
+  to { transform: scale(1.05); box-shadow: 6px 6px 0 rgba(0,0,0,0.3); }
+}
+
+.sidebarIcon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(4px 4px 0 oklch(from var(--amber-dark) l c h / 0.2));
+}
+
+.skywatchTitle,
+.launchTitle,
+.dsnPlay {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--paper-bg);
+  line-height: 1;
+  text-shadow: none;
+}
+
+.dsnPlay {
+  color: var(--amber-soft);
+  margin-bottom: 0.25rem;
+}
+
+.skywatchBody,
+.launchSub,
+.dsnDesc {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--paper-bg);
+  line-height: 1.3;
+}
+
+.dsnDesc {
+  color: var(--text-main);
+  opacity: 0.9;
+  max-width: 25ch;
+  margin: 0 auto;
+}
+
+.dsnCard:active .dpadVertical,
+.dsnCard:active .dpadHorizontal,
+.dsnCard:active .actionBtn {
+  box-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+  background: var(--paper-mid);
+}
+
+.dsnCard:active .actionBtn {
+  transform: scale(0.9);
+}
+
+.dsnCard:active .actionBtn:last-child {
+  transform: translateX(-18px) scale(0.9);
+}
+
+.skywatchLink {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--paper-bg);
+  color: var(--text-main);
+  border-radius: var(--radius-wobbly);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease-pop);
+  box-shadow: 4px 4px 0 var(--amber-dark);
+}
+
+.skywatchLink:hover {
+  transform: scale(1.1) rotate(-3deg);
+  background: var(--paper-mid);
+}
+
+.dsnLogo {
+  width: clamp(80px, 15vw, 110px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  filter: drop-shadow(4px 4px 0 rgba(0,0,0,0.1));
+  margin-bottom: -0.5rem;
+  transform: rotate(-3deg);
+}
+
+.dsnText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 1000px) {
+  .moonGrid,
+  .sidebar {
+    grid-column: span 12;
+  }
+
+  .moonCard:nth-child(1),
+  .moonCard:nth-child(2),
+  .moonCard:nth-child(3) {
+    flex: 1 1 100%;
+    transform: rotate(0.5deg) translateY(0);
+  }
+
+  .moonCard:nth-child(even) {
+    transform: rotate(-0.5deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .dsnCard {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .dsnControlsLeft,
+  .dsnControlsRight {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .actionButtons {
+    flex-direction: row;
+  }
+
+  .actionBtn:last-child {
+    transform: none;
+  }
+
+  .dsnScreen {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dsnScreen {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
